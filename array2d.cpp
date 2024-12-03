@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -15,7 +16,7 @@ int main() {
     cout << "\nMatriks yang dimasukkan:" << endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 2; j++) {
-            cout << a[i][j] << " ";
+            cout << "\t" << a[i][j] << " ";
         }
         cout << endl;
     }
@@ -23,21 +24,21 @@ int main() {
     // Perhitungan rata-rata per baris
     cout << "\nRata-rata setiap baris:" << endl;
     for (int i = 0; i < 3; i++) {
-        float sum = 0;
+        float average = 0;
         for (int j = 0; j < 2; j++) {
-            sum += a[i][j];
+            average+= a[i][j];
         }
-        cout << "Baris " << i << ": " << sum / 2 << endl;  // 2 karena ada 2 kolom
+        cout << "\t" << average / 2 << endl;  // 2 karena ada 2 kolom
     }
 
     // Perhitungan rata-rata per kolom
     cout << "\nRata-rata setiap kolom:" << endl;
     for (int j = 0; j < 2; j++) {
-        float sum = 0;
+        float average = 0;
         for (int i = 0; i < 3; i++) {
-            sum += a[i][j];
+            average += a[i][j];
         }
-        cout << "Kolom " << j << ": " << sum / 3 << endl;  // 3 karena ada 3 baris
+        cout << "\t" << average / 3 << "\t"; // 3 karena ada 3 baris
     }
 
     return 0;
