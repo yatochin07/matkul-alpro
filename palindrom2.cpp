@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <cstdlib> // Untuk system("clear")
 
 using namespace std;
 
@@ -13,9 +12,9 @@ void cekPalindrom(string kata) {
 
     // Memeriksa dan langsung mencetak hasilnya
     if (original == kata) {
-        cout << kata << " adalah palindrom" << endl;
+        cout << original << " adalah palindrom" << endl;
     } else {
-        cout << kata << " bukan palindrom" << endl;
+        cout << original << " bukan palindrom" << endl;
     }
 }
 
@@ -28,10 +27,7 @@ int main() {
         cin >> kata[i];
     }
 
-    // Menggunakan system("clear") untuk membersihkan layar
-    system("clear"); // Untuk Unix/Linux, gunakan system("cls") untuk Windows
-
-    // Menampilkan output setelah layar dibersihkan
+    // Menampilkan output hasil cek palindrom
     for (int i = 0; i < 2; i++) {
         // Memanggil fungsi cekPalindrom untuk memeriksa dan mencetak hasilnya
         cekPalindrom(kata[i]);
