@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cstdlib> // Untuk system("clear")
 
 using namespace std;
 
@@ -9,24 +10,30 @@ bool isPalindrom(string kata) {
     string original = kata;
     // Membalik kata
     reverse(kata.begin(), kata.end());
-    
+
     // Memeriksa apakah kata asli sama dengan kata yang dibalik
     return (original == kata);
 }
 
 int main() {
-    string kata;
+    string kata[2]; // Array untuk menyimpan 2 kata
 
-    // Loop untuk 2 kali input kata
-    for (int i = 1; i <= 2; i++) {
-        cout << "Masukkan kata ke-" << i << ": ";
-        cin >> kata;
-        
+    // Input kata terlebih dahulu
+    for (int i = 0; i < 2; i++) {
+        cout << "Masukkan kata ke-" << i + 1 << ": ";
+        cin >> kata[i];
+    }
+
+    // Menggunakan system("clear") untuk membersihkan layar
+    system("clear"); // Untuk Unix/Linux, gunakan system("cls") untuk Windows
+
+    // Menampilkan output setelah layar dibersihkan
+    for (int i = 0; i < 2; i++) {
         // Cek apakah kata tersebut palindrom
-        if (isPalindrom(kata)) {
-            cout << kata << " adalah palindrom" << endl;
+        if (isPalindrom(kata[i])) {
+            cout << kata[i] << " adalah palindrom" << endl;
         } else {
-            cout << kata << " bukan palindrom" << endl;
+            cout << kata[i] << " bukan palindrom" << endl;
         }
     }
 
